@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Page</title>
+  <style>
+    :root {
+      --bg: #fffefa;
+      --gray: #d9d9d9;
+      --red: #c95a5a;
+      --red-light: #e08080;
+      --pink: #dc8d8d;
+      --maroon: #7a3c3c;
+      --red-dark: #b72c2c;
+      --red-mid: #c96262;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 52px;
+      padding: 0 10px;
+      background: var(--gray);
+    }
+    .logo { width: 146px; height: 35px; background: var(--red); }
+    .menu { width: 31px; height: 28px; background: var(--red-light); }
+
+    /* ---------- Main ---------- */
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 33px 40px 40px;
+    }
+
+    .product {
+      display: grid;
+      grid-template-columns: 261px 1fr;
+      gap: 47px;
+      align-items: start;
+    }
+
+    /* Gallery */
+    .gallery {
+      background: var(--gray);
+      padding: 13px 20px 24px;
+    }
+    .gallery-main {
+      width: 100%;
+      height: 216px;
+      background: var(--pink);
+    }
+	
+	.gallery-main img{
+		width: 100%;
+		height: 100%;
+	}
+
+    /* Details */
+    .details { max-width: 224px; width: 100%; }
+    .bar { background: var(--gray); }
+    .title    { height: 25px; margin-top: 13px; }
+    .subtitle { height: 19px; width: 71px; margin-top: 10px; }
+    .price    { height: 32px; margin-top: 22px; }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 59px;
+    }
+    .btn {
+      width: 91px;
+      height: 30px;
+      border: 0;
+      background: var(--gray);
+      cursor: pointer;
+    }
+    .btn:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+
+    /* Description */
+    .description {
+      height: 186px;
+      margin-top: 17px;
+      background: var(--gray);
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 58px;
+      padding: 0 18px;
+      background: var(--gray);
+    }
+    .footer-left  { width: 131px; height: 28px; background: var(--red-dark); border: 0; cursor: pointer; }
+    .footer-right { width: 120px; height: 33px; background: var(--red-mid);  border: 0; cursor: pointer; }
+    footer button:focus-visible { outline: 3px solid #000; outline-offset: 2px; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 640px) {
+      main { padding: 24px 20px; }
+      .product { grid-template-columns: 1fr; gap: 24px; }
+      .details { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo" aria-label="Logo"></div>
+    <div class="menu" aria-label="Menu"></div>
+  </header>
+
+  <main>
+    <section class="product">
+      <div class="gallery">
+        <div class="gallery-main" aria-label="Main product image"><img src="../Images/Screenshot 2026-11-22 160518.png"></div><p class="product-name"></div>
+      </div>
+
+      <div class="details">
+        <div class="bar title" aria-label="Product title"></div>
+        <div class="bar subtitle" aria-label="Subtitle"></div>
+        <div class="bar price" aria-label="Price"></div>
+        <div class="actions">
+          <button class="btn" type="button" aria-label="Button 1"></button>
+          <button class="btn" type="button" aria-label="Button 2"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="description" aria-label="Description"></section>
+  </main>
+
+  <footer>
+    <button class="footer-left" type="button" aria-label="Footer button left"></button>
+    <button class="footer-right" type="button" aria-label="Footer button right"></button>
+  </footer>
+
+</body>
+</html>
